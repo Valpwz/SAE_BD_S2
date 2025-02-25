@@ -18,7 +18,10 @@
 -- | isbn          | titre                                      | nbpages | datepubli | prix  |
 -- +---------------+--------------------------------------------+---------+-----------+-------+
 -- | etc...
--- = Reponse question 127156.
+-- = 
+Select distinct isbn, titre 
+from LIVRE natural join COMMANDE 
+where DAY(datecom) = 1 and MONTH(datecom) = 12 and YEAR(datecom) = 2024;
 
 
 
@@ -34,7 +37,10 @@
 -- | idcli | nomcli  | prenomcli | adressecli                  | codepostal | villecli    |
 -- +-------+---------+-----------+-----------------------------+------------+-------------+
 -- | etc...
--- = Reponse question 127202.
+-- =
+Select distinct idcli, nomcli, prenomcli, adressecli, codepostal, villecli 
+from CLIENT natural join COMMANDE natural join LIVRE natural join AUTEUR 
+where nomauteur = 'René Goscinny' and YEAR(datecom) = 2021;
 
 
 
