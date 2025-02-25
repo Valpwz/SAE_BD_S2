@@ -849,6 +849,7 @@ insert into EDITEUR(nomedit,idedit) values
 	('Albin Michel Bnf (Bibliothèque Nationale De France)', 237),
 	('Maurice Olender', 238),
 	('Le Centurion', 239);
+	--('First Interactive',)
 
 -- Les auteurs
 insert into AUTEUR(idauteur, nomauteur,anneenais,anneedeces) values
@@ -4746,6 +4747,7 @@ insert into LIVRE(isbn, titre,nbpages,datepubli,prix) values
 	('9782226079244', 'Histoire indiscrète des années Balladur', 288, 1995, 9.0),
 	('9782226070180', 'Paris 1944', 573, 1994, 5.29),
 	('9782020977739', 'Lettres à maman', 61, 2008, 25.0);
+	-- ('9782844273765', 'SQL pour les Nuls', 292, 2002, 33.5);
 
 -- Les thèmes des livres
 insert into THEMES(isbn,iddewey) values
@@ -11070,6 +11072,8 @@ insert into ECRIRE(isbn,idauteur) values
 	('9782226079244', 'OL56708A'),
 	('9782226070180', 'OL3967064A'),
 	('9782020977739', 'OL441591A');
+	--('9782844273765', 'OL246259A')
+	--('9782844273765', 'OL7670824A')
 
 -- les stocks de livres
 insert into POSSEDER(idmag, isbn, qte) values
@@ -13048,6 +13052,7 @@ insert into POSSEDER(idmag, isbn, qte) values
 	(1, '9782226085962', 10),
 	(1, '9782081271654', 9),
 	(7, '9782070570669', 6);
+	--(7, '9782844273765', 3);
 
 insert into COMMANDE(numcom, datecom, enligne, livraison, idcli, idmag) values
 	(1,str_to_date('1/1/2020','%d/%m/%Y'),'N','M',356,5),

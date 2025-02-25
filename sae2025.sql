@@ -1,5 +1,5 @@
 -- Devoir 127
--- Nom: CHER , Prenom: Naick
+-- Lacroix Wyatt
 
 -- Feuille SAE2.05 Exploitation d'une base de données: Livre Express
 -- 
@@ -37,7 +37,7 @@ where DAY(datecom) = 1 and MONTH(datecom) = 12 and YEAR(datecom) = 2024;
 -- | idcli | nomcli  | prenomcli | adressecli                  | codepostal | villecli    |
 -- +-------+---------+-----------+-----------------------------+------------+-------------+
 -- | etc...
--- =
+-- = 
 Select distinct idcli, nomcli, prenomcli, adressecli, codepostal, villecli 
 from CLIENT natural join COMMANDE natural join LIVRE natural join AUTEUR 
 where nomauteur = 'René Goscinny' and YEAR(datecom) = 2021;
@@ -56,7 +56,10 @@ where nomauteur = 'René Goscinny' and YEAR(datecom) = 2021;
 -- | isbn          | titre                             | nommag                  | qte |
 -- +---------------+-----------------------------------+-------------------------+-----+
 -- | etc...
--- = Reponse question 127235.
+-- = 
+Select distinct isbn, titre, nommag, qte 
+from LIVRE natural join MAGASIN natural join POSSEDER
+where isbn not in (select isbn from ECRIRE) and qte > 8;
 
 
 
