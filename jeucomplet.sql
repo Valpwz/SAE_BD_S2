@@ -849,7 +849,7 @@ insert into EDITEUR(nomedit,idedit) values
 	('Albin Michel Bnf (Bibliothèque Nationale De France)', 237),
 	('Maurice Olender', 238),
 	('Le Centurion', 239);
-	--('First Interactive',)
+	--('First Interactive', 240);
 
 -- Les auteurs
 insert into AUTEUR(idauteur, nomauteur,anneenais,anneedeces) values
@@ -8949,7 +8949,7 @@ insert into EDITER(isbn,idedit) values
 	('9782080201713', 6),
 	('9782226254443', 5),
 	('9782227300149',239);
-
+	--('9782844273765',240);
 -- les auteurs des livres
 insert into ECRIRE(isbn,idauteur) values
 	('9782205054750', 'OL7572575A'),
