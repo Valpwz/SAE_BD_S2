@@ -19,9 +19,9 @@
 -- +---------------+--------------------------------------------+---------+-----------+-------+
 -- | etc...
 -- = 
-Select distinct isbn, titre 
-from LIVRE natural join COMMANDE 
-where DAY(datecom) = 1 and MONTH(datecom) = 12 and YEAR(datecom) = 2024;
+Select distinct isbn, titre, nbpages, datepubli, prix
+from LIVRE natural join DETAILCOMMANDE natural join COMMANDE
+where datecom = '2024-12-01';
 
 
 
@@ -38,9 +38,9 @@ where DAY(datecom) = 1 and MONTH(datecom) = 12 and YEAR(datecom) = 2024;
 -- +-------+---------+-----------+-----------------------------+------------+-------------+
 -- | etc...
 -- = 
-Select distinct idcli, nomcli, prenomcli, adressecli, codepostal, villecli 
-from CLIENT natural join COMMANDE natural join LIVRE natural join AUTEUR 
-where nomauteur = 'René Goscinny' and YEAR(datecom) = 2021;
+Select distinct idcli, nomcli, prenomcli, adressecli, codepostal, villecli
+from CLIENT natural join COMMANDE natural join LIVRE natural join AUTEUR natural join DETAILCOMMANDE
+where nomauteur = 'René Goscinny' and YEAR(datecom) = '2021';
 
 
 
